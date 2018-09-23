@@ -1,0 +1,1 @@
+package designPatterns.creational.singleton.thread_safe;
