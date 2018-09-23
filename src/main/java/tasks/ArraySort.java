@@ -1,20 +1,20 @@
-package Tasks;
+package tasks;
 
 public class ArraySort {
 
     public static void main(String[] args) {
         int[] array1 = new int[10];
         for (int i = 0; i < array1.length; i++) {
-            array1[i] = (int) (Math.random()*100);
+            array1[i] = (int) (Math.random() * 100);
         }
-        for (int i=0; i < array1.length; i++){
+        for (int i = 0; i < array1.length; i++) {
             System.out.println(array1[i]);
         }
         System.out.println("сортируем");
         //sortedArray(array1);
         sortArrayBubble1(array1);
 
-        for (int i=0; i < array1.length; i++){
+        for (int i = 0; i < array1.length; i++) {
             System.out.println(array1[i]);
         }
     }
@@ -34,13 +34,13 @@ public class ArraySort {
             int min_i = i;
             /*В оставшейся части подмножества ищем элемент,
            который меньше предположенного минимума*/
-            for ( int j = i+1; j <arg.length; j++){
+            for (int j = i + 1; j < arg.length; j++) {
                 //Если находим, запоминаем его индекс
                 if (min > arg[j]) {
                     min = arg[j];
                     min_i = j;
+                }
             }
-        }
             /*Если нашелся элемент, меньший, чем на текущей позиции,
           меняем их местами*/
             if (i != min_i) {
@@ -52,6 +52,7 @@ public class ArraySort {
 
     }
     //Сортировка пузырьком (Bubble sort)
+
     /**
      * Алгоритм проходит массив от начала и до конца, сравнивая попарно соседние элементы,
      * Если элементы стоят в неправильном порядке, то они меняются местами, таким образом,
@@ -60,35 +61,37 @@ public class ArraySort {
      * максимального элемент и т.д. В итоге, наименьший элемент постепенно перемещается
      * к началу массива («всплывает» до нужной позиции как пузырёк в воде).
      */
-    //реализация алгоритма Сортировка пузырьком на Java (по убыванию):
-    static void sortArrayBubble1 (int[] arg) {
-        for (int i = 0; i < arg.length-1; i++) {
 
-            for (int j = arg.length-1; j >0; j--) {
-                if (arg[j-1] > arg[j]) {
-                    int tmp = arg[j-1];
-                    arg[j-1] = arg[j];
+    //реализация алгоритма Сортировка пузырьком на Java (по возрастанию):
+    public static void sortArrayBubble1(int[] arr) {
+    /*Внешний цикл каждый раз сокращает фрагмент массива,
+      так как внутренний цикл каждый раз ставит в конец
+      фрагмента максимальный элемент*/
+        for (int i = arr.length - 1; i > 0; i--) {
+            for (int j = 0; j < i; j++) {
+            /*Сравниваем элементы попарно,
+              если они имеют неправильный порядок,
+              то меняем местами*/
+                if (arr[j] > arr[j + 1]) {
+                    int tmp = arr[j];
+                    arr[j] = arr[j + 1];
+                    arr[j + 1] = tmp;
+                }
+            }
+        }
+    }
+
+    //реализация алгоритма Сортировка пузырьком на Java (по убыванию):
+    static void sortArrayBubble12(int[] arg) {
+        for (int i = 0; i < arg.length - 1; i++) {
+
+            for (int j = arg.length - 1; j > i; j--) {
+                if (arg[j - 1] > arg[j]) {
+                    int tmp = arg[j - 1];
+                    arg[j - 1] = arg[j];
                     arg[j] = tmp;
                 }
             }
         }
     }
-    //реализация алгоритма Сортировка пузырьком на Java (по возрастанию):
-    public static void sortArrayBubble2(int[] arr){
-    /*Внешний цикл каждый раз сокращает фрагмент массива,
-      так как внутренний цикл каждый раз ставит в конец
-      фрагмента максимальный элемент*/
-        for(int i = arr.length-1 ; i > 0 ; i--){
-            for(int j = 0 ; j < i ; j++){
-            /*Сравниваем элементы попарно,
-              если они имеют неправильный порядок,
-              то меняем местами*/
-            if( arr[j] > arr[j+1] ){
-                int tmp = arr[j];
-                arr[j] = arr[j+1];
-                arr[j+1] = tmp;
-            }
-        }
-    }
-}
 }

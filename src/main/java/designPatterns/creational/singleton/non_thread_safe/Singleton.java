@@ -1,4 +1,4 @@
-package designPatterns.creational.singleton.exapmle1;
+package designPatterns.creational.singleton.non_thread_safe;
 
 public final class Singleton {
     private static Singleton instance;

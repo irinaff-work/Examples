@@ -4,7 +4,7 @@ import java.util.Scanner;
 import java.util.SortedSet;
 import java.util.TreeSet;
 
-public class ExExTreeSet3 {
+public class ExTreeSet3 {
     public static void main(String[] args) {
         Scanner reader = new Scanner(System.in).useDelimiter("\\s+");
         SortedSet<String> sortedSet = new TreeSet<>();
