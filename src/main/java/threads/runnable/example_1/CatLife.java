@@ -1,4 +1,4 @@
-package threads.threads1;
+package threads.runnable.example_1;
 
 /**
  * В следующем примере поток успешно поспит 2 раза, но третий сон будет прерван.

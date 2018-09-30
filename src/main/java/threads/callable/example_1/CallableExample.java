@@ -1,10 +1,12 @@
-package threads.threads4;
+package threads.callable.example_1;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.concurrent.*;
+
+import static java.lang.Thread.sleep;
 
 public class CallableExample {
 
@@ -47,7 +49,7 @@ public class CallableExample {
 
         @Override
         public String call() throws Exception{
-            Thread.sleep(1000);
+            TimeUnit.SECONDS.sleep(4);
             // наименование потока, выполняющего callable задачу
             return Thread.currentThread().getName();
         }

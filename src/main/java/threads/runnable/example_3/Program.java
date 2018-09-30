@@ -1,6 +1,6 @@
-package threads.threads2;
+package threads.runnable.example_3;
 
-public class Program {
+class Program {
     //Переменая, которой оперирует инкременатор
     public static int mValue = 0;
 
@@ -17,14 +17,13 @@ public class Program {
         //с интервалом в i*2 секунд
         for (int i = 1; i <= 3; i++) {
             try {
-                Thread.sleep(i * 2 * 1000); //Ожидание в течении i*2 сек.
+                Thread.sleep(i * 2 * 1000);        //Ожидание в течении i*2 сек.
             } catch (InterruptedException e) {
-                //не обрабатывается
             }
 
             mInc.changeAction();    //Переключение действия
         }
 
-        mInc.finish();    //Инициация завершения побочного потока
+        mInc.interrupt();    //Прерывание побочного потока
     }
 }

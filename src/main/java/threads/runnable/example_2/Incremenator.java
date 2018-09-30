@@ -1,21 +1,29 @@
-package threads.threads3;
+package threads.runnable.example_2;
 
 class Incremenator extends Thread {
+    //О ключевом слове volatile - чуть ниже
     private volatile boolean mIsIncrement = true;
+    private volatile boolean mFinish = false;
 
     public void changeAction()    //Меняет действие на противоположное
     {
         mIsIncrement = !mIsIncrement;
     }
 
+    public void finish()        //Инициирует завершение потока
+    {
+        mFinish = true;
+    }
+
     @Override
     public void run() {
         do {
-            //System.out.println("do ");
-            if (!Thread.interrupted())    //Проверка прерывания
+            if (!mFinish)    //Проверка на необходимость завершения
             {
-                if (mIsIncrement) Program.mValue++;    //Инкремент
-                else Program.mValue--;            //Декремент
+                if (mIsIncrement)
+                    Program.mValue++;    //Инкремент
+                else
+                    Program.mValue--;    //Декремент
 
                 //Вывод текущего значения переменной
                 System.out.print(Program.mValue + " ");
@@ -25,9 +33,10 @@ class Incremenator extends Thread {
             try {
                 Thread.sleep(1000);        //Приостановка потока на 1 сек.
             } catch (InterruptedException e) {
-                return;    //Завершение потока после прерывания
             }
         }
         while (true);
     }
 }
+
+
