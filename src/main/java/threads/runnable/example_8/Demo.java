@@ -7,6 +7,7 @@ public class Demo {
     public static void main(String[] args) {
         Resourse resorce = new Resourse();
         resorce.i = 5;
+        resorce.j = 5;
         MyThread myThread = new MyThread();
         myThread.setName("one");
         MyThread myThread1 = new MyThread();
@@ -46,8 +47,8 @@ class Resourse {
     Lock lock = new ReentrantLock();
 
     void changeI() {
-        int i = this.i;
         lock.lock();
+        int i = this.i;
         if (Thread.currentThread().getName().equals("one")) {
             Thread.yield();
         }
