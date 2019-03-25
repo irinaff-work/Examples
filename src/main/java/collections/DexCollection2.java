@@ -30,7 +30,7 @@ public class DexCollection2 {
         Spliterator<Integer> spliterator = list.spliterator();
         spliterator.forEachRemaining(integer -> {
             if (integer%2==0) System.out.println("even the number");
-        });//using lambda expressions it becomes very convenient
+        });//using lambda_1 expressions it becomes very convenient
 
 //trySplit() example;
         List<Integer> lst = new ArrayList<>(Arrays.asList(1,1,1,2,2,2,2));
