@@ -1,9 +1,8 @@
 package stream;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.UUID;
+import java.util.*;
 import java.util.concurrent.TimeUnit;
+import java.util.stream.Collectors;
 
 public class Example_2 {
     /*
@@ -13,6 +12,7 @@ public class Example_2 {
     пример демонстрирует, как можно легко увеличить скорость работы, используя параллельные потоки.
      */
     public static void main(String[] args) {
+
         //создадим большой список из уникальных элементов
         int max = 1000000;
         List<String> values = new ArrayList<>(max);
@@ -22,7 +22,8 @@ public class Example_2 {
         }
 
         //измерим время сортировки этого списка
-        //оба куска кода практически идентичны, однако параллельная сортировка почти в два раза быстрее.
+        //оба куска кода практически идентичны, однако
+        // параллельная сортировка почти в два раза быстрее.
         // Все, что вам нужно сделать, это заменить вызов stream() на parallelStream().
         //Последовательная сортировка
         long t10 = System.nanoTime();
