@@ -1,4 +1,4 @@
-package concarent_collections.lambda_2;
+package concarent_collections.lesson_1_6.example_2;
 
 /**
  * TODO: comment
