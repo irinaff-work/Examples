@@ -1,4 +1,4 @@
-package concarent_collections.lambda_1;
+package concarent_collections.lesson_1_6.example_1;
 
 import Lambda.Converter;
 

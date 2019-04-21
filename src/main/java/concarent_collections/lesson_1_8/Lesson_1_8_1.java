@@ -1,4 +1,4 @@
-package concarent_collections;
+package concarent_collections.lesson_1_8;
 
 import javax.print.DocFlavor;
 import java.io.BufferedReader;
@@ -8,15 +8,13 @@ import java.util.*;
 import java.util.stream.Collectors;
 
 /**
- * TODO: comment
  *
  * @autor irinaff
  * @since 29.03.2019
  * Как превратить строку в коллекцию?
- * Comparable & Comparator
  **/
 
-public class Lesson_1_8 {
+public class Lesson_1_8_1 {
     public static void main(String[] args) {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         try {
@@ -40,21 +38,5 @@ public class Lesson_1_8 {
         } catch (IOException e) {
             System.out.println("!");
         }
-
-        //Comparable & Comparator
-        //пример сортировки
-        List<Integer> lst = new ArrayList<>();
-        lst.addAll(Arrays.asList(1,1,1,6,3,7,9,2,2,2,2));
-
-        //in ascending order
-        lst.sort((o1, o2) -> o1.compareTo(o2));
-        lst.sort(Integer::compareTo);
-        Collections.sort(lst, Comparator.naturalOrder());
-        Collections.sort(lst);
-
-        lst.forEach(System.out::print);
-
-        System.out.println("[" + (char) 32 + "]");
-
     }
 }

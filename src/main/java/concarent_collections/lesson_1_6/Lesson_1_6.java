@@ -1,12 +1,11 @@
-package concarent_collections;
+package concarent_collections.lesson_1_6;
 
 import java.util.*;
 import java.util.concurrent.TimeUnit;
 import java.util.stream.Collectors;
 
 /**
- * TODO: comment
- *
+ * Лямбда-выражения
  * @autor irinaff
  * @since 23.03.2019
  * Lambda Expressions
@@ -25,7 +24,7 @@ public class Lesson_1_6 {
 
         //Lambda Runnable
         Runnable r2 = () -> System.out.println("Hello world two!");
-        //if the lambda_1 expression is not one string use {//method body}:
+        //if the example_1 expression is not one string use {//method body}:
         Runnable r3 =() -> {
             System.out.println("Hello world two!");
             System.out.println("I'm better than r1");

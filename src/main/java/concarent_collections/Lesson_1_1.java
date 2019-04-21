@@ -52,7 +52,7 @@ public class Lesson_1_1 {
         //10 1
 
         Spliterator<Integer> spliterator = list.spliterator();
-        //using lambda_1 expressions it becomes very convenient
+        //using example_1 expressions it becomes very convenient
         spliterator.forEachRemaining(integer -> {if (integer%2==0) System.out.println("even the number"); });
 
         //trySplit() example;

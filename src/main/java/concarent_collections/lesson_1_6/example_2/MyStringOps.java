@@ -1,11 +1,11 @@
-package concarent_collections.lambda_2;
+package concarent_collections.lesson_1_6.example_2;
 
 /**
  * TODO: comment
  *
  * @autor irinaff
  * @since 23.03.2019
- * example of class::method type of lambda_1:
+ * example of class::method type of example_1:
  **/
 
 public class MyStringOps {

@@ -34,7 +34,7 @@ public class Example_1 {
         // Новый способ:
 
         new Thread(
-                () -> System.out.println("Hello from thread lambda_1!")
+                () -> System.out.println("Hello from thread example_1!")
         ).start();
 
         Consumer c = (x) -> { x = '1'; System.out.println(x); };
